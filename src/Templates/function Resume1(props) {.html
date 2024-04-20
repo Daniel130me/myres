@@ -1,0 +1,55 @@
+function Resume1(props) {
+    return (
+        <>
+            <div className='text-center mb-5'>
+                <h1 className='mb-4'>{props.user.firstName ? props.user.firstName + ' ' + props.user.lastName : 'John Doe'}</h1>
+                <div className='d-flex align-items-center justify-content-around'>
+                    <p className='mr-2 oswald_font' style={{ fontWeight: "300", fontSize: '15px' }}><span style={{ fontWeight: "400" }}>Email: </span>koskodaniel@gmail.com</p>
+                    <p className='mr-2 oswald_font' style={{ fontWeight: "300", fontSize: '15px' }}><span style={{ fontWeight: "400" }}>Tel: </span>+23481-78-1234</p>
+                    <p className='mr-2 oswald_font' style={{ fontWeight: "300", fontSize: '15px' }}><span style={{ fontWeight: "400" }}>Address: </span>Oswald, US</p>
+                </div>
+            </div>
+            <div className='mb-5'>
+                <h5 className='text-muted'>SUMMARY</h5>
+                <p className=''>A mobile and web developer for over a decade, transforming complex challenges to simple repetitive tasks for human use. A lover of dogs and men, training people to gain full knowledge of their potentials</p>
+            </div>
+            <div className='mb-5'>
+                <h5 className='text-muted'>EXPERIENCE</h5>
+                <p>Nov. 2020 - Present | Wordlclass ICT solutions, Lagos, Nigeria</p>
+                <p className='oswald_font'>A Web Developer</p>
+                <ul>
+                    <li>Integrated a payment gateway system that processed online payments for hundreds of
+                        event tickets, improving the overall efficiency of the ticket sales process</li>
+                    <li>Worked closely with the event organizers to ensure the website met their requirements and
+                        provided a seamless user experience for ticket buyers.</li>
+                    <button type="button">+Add</button>
+                </ul>
+            </div>
+            <div className='mb-5'>
+                <h5 className='text-muted'>EDUCATION</h5>
+                <p>2020 | Federal University of Nigeria, Lagos, Nigeria</p>
+                <ul>
+                    <li>Teaching c++ to over 500 students</li>
+                    <li>Designing Interfaces</li>
+                </ul>
+            </div>
+            <div className='mb-5'>
+                <h5 className='text-muted'>CERTIFICATION</h5>
+                <p>2020 | Intermediate Python for Data analysis</p>
+                <p>2021 | Intermediate Python for Data analysis</p>
+                <p>2022 | Intermediate Python for Data analysis</p>
+            </div>
+            <div className='mb-5'>
+                <h5 className='text-muted'>SKILLS</h5>
+                <ul>
+                    <li>PHP</li>
+                    <li>Python</li>
+                    <li>Javascript</li>
+                </ul>
+            </div>
+        </>
+    )
+}
+
+
+export default Resume1

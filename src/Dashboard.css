@@ -1,0 +1,17 @@
+/* dashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* Apply Oswald font to h1 and h2 tags */
+h1, h2, h3, h4, h5 {
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    /* font-weight: 400; Adjust weight as needed */
+}
+
+.oswald_font {
+    font-family: "Oswald", sans-serif;
+}
+
+p {
+    margin-bottom: 0;
+}
