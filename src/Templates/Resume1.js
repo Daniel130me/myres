@@ -19,7 +19,13 @@ function Resume1(props) {
         "Designing Interfaces",
         "I am here"
     ]);
-    const [ experienceTitle, setExperienceTitle ] = useState('Nov. 2020 - Jan. 2023 | Radisoon Blu Hotel, Ikeja, Lagos, Nigeria')
+    const [experienceTitle, setExperienceTitle] = useState('Nov. 2020 - Jan. 2023 | Radisoon Blu Hotel, Ikeja, Lagos, Nigeria')
+    const [experience, setExperience] = useState('EXPERIENCE')
+    const [position, setPosition] = useState(props.user.position[0].title)
+    const [summaryTitle, setSummaryTitle] = useState('SUMMARY')
+    const [summaryText, setSummaryText] = useState(props.user.summary)
+    const [firstname, setFirstname] = useState(props.user.firstName)
+    const [lastname, setLastname] = useState(props.user.lastName)
     const addListItem = () => {
         setExperienceItems([...experienceItems, ""]);
     };
@@ -29,13 +35,8 @@ function Resume1(props) {
     //     setExperienceItems(newText)
     //     adjustTextareaRows(index);
     // }
-    const adjustTextareaRows = (index) => {
-        const textarea = document.getElementById(`textarea-${index}`);
-        if (textarea) {
-            textarea.style.height = 'auto';
-            textarea.style.height = `${textarea.scrollHeight}px`;
-        }
-    };
+    // console
+
     const listHandler = () => {
         console.log(experienceItems)
         for (let i = 0; i < experienceItems.length; i++) {
@@ -46,8 +47,11 @@ function Resume1(props) {
         setExperienceItems([...experienceItems])
     }
     useEffect(() => {
-        experienceItems.forEach((item, index) => adjustTextareaRows(index));
-    }, [experienceItems]);
+        const textarea = document.querySelectorAll('textarea')
+        textarea.forEach((item) => {
+            item.style.height = `${item.scrollHeight}px`
+        })
+    }, [experienceItems, summaryText, experienceTitle]);
     return (
         <>
             <div className='text-center mb-5'>
@@ -58,57 +62,36 @@ function Resume1(props) {
                     <p className='mr-2 oswald_font' style={{ fontWeight: "300", fontSize: '15px' }}><span style={{ fontWeight: "400" }}>Address: </span>Oswald, US</p>
                 </div>
             </div>
+
+            {/* summary section starts */}
             <div className='mb-5'>
-                <h5 className='text-muted'>SUMMARY</h5>
-                <p className=''>A mobile and web developer for over a decade, transforming complex challenges to simple repetitive tasks for human use. A lover of dogs and men, training people to gain full knowledge of their potentials</p>
+                <input type='text' onChange={(e) => setSummaryTitle(e.target.value)} value={summaryTitle} className='titleClass text-muted' />
+                <textarea cols='100' rows='1' onChange={(e) => setSummaryText(e.target.value)} value={summaryText} className='d-block' />
             </div>
+            {/* summary section stops */}
+
+
+            {/* EXPERIENCE SECTION starts */}
             <div className='mb-5'>
-                <h5 className='text-muted'>EXPERIENCE</h5>
-                <textarea 
-                id={`textarea`}
-                rows="1"
-                cols="100"
-                style={{
-                    border: 'none',
-                    outline: 'none',
-                    backgroundColor: 'transparent',
-                    resize: 'none',
-                    padding: '0',
-                    margin: '0',
-                    width: '100%',
-                    fontFamily: 'inherit',
-                    fontSize: 'inherit',
-                    fontWeight: 'inherit'
-                }}
-                    value={experienceTitle}
-                    onChange={ (e)=> setExperienceTitle(e.target.value) }
+                {/* experience title */}
+                <input type='text' onChange={(e) => setExperience(e.target.value)} value={experience} className='titleClass text-muted' />
+                {/* experience date and office */}
+                <textarea rows="1" cols="100" value={experienceTitle}
+                    onChange={(e) => {
+                        setExperienceTitle(e.target.value)
+                    }}
                 />
-                <div className='mylist' style={{ marginLeft: '20px' }}>
+                <input type='text' onChange={(e) => setPosition(e.target.value)} value={position} className='positionTitle text-muted' />
+                
+
+                {/* experience items - list */}
+                <div style={{ marginLeft: '20px' }}>
                     {experienceItems.map((item, index) => (
                         <div className='d-flex'>
                             <i>1</i>
-                            <textarea
-                                id={`textarea-${index}`}
-                                rows="1"
-                                cols="100"
-                                style={{
-                                    border: 'none',
-                                    outline: 'none',
-                                    backgroundColor: 'transparent',
-                                    resize: 'none',
-                                    padding: '0',
-                                    margin: '0',
-                                    width: '100%',
-                                    fontFamily: 'inherit',
-                                    fontSize: 'inherit',
-                                    fontWeight: 'inherit'
-                                }}
-                                placeholder='Add new text'
-                                autoFocus
-                                value={item}
-                                onBlur={listHandler}
+                            <textarea rows="1" cols="100" placeholder='Add new text' autoFocus value={item} onBlur={listHandler}
                                 onChange={(e) => {
-                                    const expitems = [ ...experienceItems ]
+                                    const expitems = [...experienceItems]
                                     expitems[index] = e.target.value
                                     setExperienceItems(expitems)
                                 }}
@@ -118,6 +101,9 @@ function Resume1(props) {
                     <button type="button" onClick={addListItem}>+Add</button>
                 </div>
             </div>
+            {/* EXPERIENCE SECTION stops */}
+
+            {/* education section starts */}
             <div className='mb-5'>
                 <h5 className='text-muted'>EDUCATION</h5>
                 <p>2020 | Federal University of Nigeria, Lagos, Nigeria</p>
@@ -126,6 +112,9 @@ function Resume1(props) {
                     <li>Designing Interfaces</li>
                 </ul>
             </div>
+            {/* education section stops */}
+
+
             <div className='mb-5'>
                 <h5 className='text-muted'>CERTIFICATION</h5>
                 <p>2020 | Intermediate Python for Data analysis</p>

@@ -19,13 +19,14 @@ const Dashboard = () => {
         let res = Data //data from local or realdb
         // res.firstName = ''
         setUserData(res)
-        userData.firstName = null
-        // console.log(userData.firstName)
+        // userData.firstName = null
+        // console.log(userData.position[0].title)
     }
 
     useEffect(() => {
         fetchuserdata()
     }, [])
+    console.log('lk')
     return (
 
         <div className="container-fluid">
