@@ -54,3 +54,14 @@ textarea {
     width: 100%;
     height: auto;
 }
+
+input {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* input[type=text].textDateInput {
+    max-width: 125px;
+    width: auto;
+} */

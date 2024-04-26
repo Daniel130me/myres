@@ -4,29 +4,35 @@ import { useState, useEffect } from 'react'
 import './Dashboard.css'
 import Data from './Data';
 import Resume1 from './Templates/Resume1';
+// console.log('jh')
 const Dashboard = () => {
     const [hideSideBar, setHideSideBar] = useState(true)
     const [fullName, setFullName] = useState('John Doe')
-    const [userData, setUserData] = useState({})
+    // const [userData, setUserData] = useState({})
     const sidebarHandler = () => {
         setHideSideBar(!hideSideBar); // Toggle the state
     }
-    const fetchuserdata = () => {
+    const fetchuserdata = async () => {
         // axios fecth the data from the local database, 
         // if no data in localdb
         // fecth from realdb
         // save as recent in localdb history, and update the states for actual data
         let res = Data //data from local or realdb
         // res.firstName = ''
-        setUserData(res)
+        // setTimeout(ct(res), 1000)
+            // setUserData(res)
         // userData.firstName = null
-        // console.log(userData.position[0].title)
+        // console.log(userData)
     }
 
+    // function ct(ele) {
+    //     setUserData(ele)
+    //     console.log(userData)
+    // }
     useEffect(() => {
         fetchuserdata()
     }, [])
-    console.log('lk')
+    // console.log('lk')
     return (
 
         <div className="container-fluid">
@@ -61,7 +67,7 @@ const Dashboard = () => {
                         <h4>MyRes</h4>
                     </div>
                     <div className='mt-5 mx-auto' style={{ maxWidth: "80%" }}>
-                        <Resume1 user={userData} />
+                        <Resume1 user={Data} />
                     </div>
                     <button type='button' className='btn btn-primary' onClick={sidebarHandler} style={{ position: "fixed", bottom: "10px", right: "10px" }}>Edit</button>
                     <button type='button' className='btn btn-primary' onClick={fetchuserdata} style={{ position: "fixed", bottom: "50px", right: "10px" }}>Use Template</button>

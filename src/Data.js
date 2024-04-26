@@ -17,7 +17,10 @@ const Data = {
             "companyName": "SalesPlat Technologies",
             "title": "Lead Product Designer",
             "location": "Lagos, Nigeria",
-            "description": "Managing and leading multiple teams of designers, providing guidance, and feedback on their work.\n\nOverseeing the development of multiple products and their respective teams ensuring that each product's design aligns with its specific goals and objectives and that the user experience is intuitive and engaging.",
+            "description": [
+                "Managing and leading multiple teams of designers, providing guidance, and feedback on their work.",
+                "Overseeing the development of multiple products and their respective teams ensuring that each product's design aligns with its specific goals and objectives and that the user experience is intuitive and engaging."
+            ],
             "start": {
                 "year": 2022,
                 "month": 10,
@@ -34,10 +37,13 @@ const Data = {
             "companyUsername": "salesplat",
             "title": "Product Designer",
             "location": "Lagos, Nigeria",
-            "description": "Conducted user research, interviews, wire-framing, sketching and prototyping to design solutions that caters for businesses sales, marketing and distribution\n\nCollaborating with cross-functional teams, including product managers, engineers, and stakeholders, to ensure design aligns with business objectives and user needs.",
+            "description": [
+                "Conducted user research, interviews, wire-framing, sketching and prototyping to design solutions that caters for businesses sales, marketing and distribution",
+                "Collaborating with cross-functional teams, including product managers, engineers, and stakeholders, to ensure design aligns with business objectives and user needs."
+            ],
             "start": {
                 "year": 2021,
-                "month": 10,
+                "month": 6,
                 "day": 0
             },
             "end": {
@@ -101,6 +107,28 @@ const Data = {
                 }
             }
         }
-    ]
+    ],
+    "educations": [
+        {
+            "start": {
+                "year": 2016,
+                "month": 9,
+                "day": 0
+            },
+            "end": {
+                "year": 2023,
+                "month": 11,
+                "day": 0
+            },
+            "fieldOfStudy": "Physics",
+            "degree": "Bachelor's degree",
+            "grade": "",
+            "schoolName": "Federal University of Technology Akure",
+            "description": "",
+            "activities": "",
+            "url": "https://www.linkedin.com/school/federalunivesityoftechnologyakure/",
+            "schoolId": "11744139"
+        }
+    ],
 }
 export default Data
